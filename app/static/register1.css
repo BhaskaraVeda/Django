@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f4f4f4;
+}
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    display: inline-block;
+}
+.form-container img {
+    width: 120px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #e68900;
+}
+.divider {
+    margin: 20px 0;
+    color: #888;
+}
+.create-account {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    margin: 20px auto;
+}
+.create-account a {
+    text-decoration: none;
+    color: white;
+    background-color: #0073bb;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.create-account a:hover {
+    background-color: #005fa3;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    width: 300px;
+    margin: auto;
+}
+input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #e68900;
+}
+.divider {
+    margin: 20px 0;
+    color: #888;
+}

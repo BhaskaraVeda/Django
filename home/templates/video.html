@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media List</title>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+    <style>
+        .media-item img, .media-item video {
+            position: absolute;
+            width: 70%;
+            opacity: 0; 
+            transition: opacity 1s ease;
+        }
+        .media-item video {
+            width: 100%;
+        }
+        .media-item img.active, .media-item video.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        #media-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="media-container"><center>
+        {% for media in media_items %}
+            <div class="media-item" id="media-item-{{ forloop.counter }}">
+                <h1>{{ media.title }}</h1>
+                <p>{{ media.description }}</p>
+                
+                {% if media.photo %}
+                    <img src="{{ media.photo.url }}" alt="{{ media.title }}" class="active">
+                {% endif %}
+                
+                {% if media.video %}
+                    <video width="100%" autoplay muted controls >
+                        <source src="{{ media.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </center>
+    </div>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mediaItems = document.querySelectorAll('.media-item');
+            mediaItems.forEach(item => {
+                const img = item.querySelector('img');
+                const video = item.querySelector('video');
+
+                if (img && video) {
+                    setTimeout(() => {
+                        img.classList.remove('active');
+                        video.classList.add('active');
+                        video.play();
+                    }, 2000); // 2 seconds
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
